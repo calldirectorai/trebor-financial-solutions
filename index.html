@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Trebor Financial Solutions provides expert tax preparation, credit repair, financial coaching, and bookkeeping services. 15+ years experience. Serving all 50 states.">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<!-- SEO Meta Tags -->
+<title>Landing Page - Mar 21, 2026</title>
+<meta property="og:title" content="Landing Page - Mar 21, 2026" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Landing Page - Mar 21, 2026" />
+<!-- End SEO Meta Tags -->
+
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+<div class="nav-inner">
+  <div class="nav-logo" onclick="navigateTo('home')">
+    <div class="nav-logo-mark">T</div>
+    <div class="nav-logo-text"><span class="nav-logo-name">Trebor</span><span class="nav-logo-sub">Financial Solutions</span></div>
+  </div>
+  <div class="nav-links">
+    <div class="nav-link active" data-page="home" onclick="navigateTo('home')">Home</div>
+    <div class="nav-link" data-page="tax" onclick="navigateTo('tax')">Tax Prep</div>
+    <div class="nav-link" data-page="credit" onclick="navigateTo('credit')">Credit Repair</div>
+    <div class="nav-link" data-page="coaching" onclick="navigateTo('coaching')">Coaching</div>
+    <div class="nav-link" data-page="bookkeeping" onclick="navigateTo('bookkeeping')">Bookkeeping</div>
+    <div class="nav-link" data-page="about" onclick="navigateTo('about')">About</div>
+    <div class="nav-link" data-page="contact" onclick="navigateTo('contact')">Contact</div>
+  </div>
+  <a href="tel:+1XXXXXXXXXX" class="nav-phone"><!-- REPLACE PHONE --><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> (XXX) XXX-XXXX</a><button class="nav-cta" onclick="navigateTo('contact')">Get Started</button>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-link active" data-page="home" onclick="navigateTo('home');closeMenu()">Home</div>
+  <div class="mm-link" data-page="tax" onclick="navigateTo('tax');closeMenu()">Tax Preparation</div>
+  <div class="mm-link" data-page="credit" onclick="navigateTo('credit');closeMenu()">Credit Repair</div>
+  <div class="mm-link" data-page="coaching" onclick="navigateTo('coaching');closeMenu()">Financial Coaching</div>
+  <div class="mm-link" data-page="bookkeeping" onclick="navigateTo('bookkeeping');closeMenu()">Bookkeeping</div>
+  <div class="mm-link" data-page="about" onclick="navigateTo('about');closeMenu()">About</div>
+  <div class="mm-link" data-page="contact" onclick="navigateTo('contact');closeMenu()">Contact</div>
+  <button class="mm-cta" onclick="navigateTo('contact');closeMenu()">Book a Free Consultation</button>
+</div>
+
+<!-- ═══════════ PAGE: HOME ═══════════ -->
+<div class="page active" id="page-home">
+
+<div class="trust-bar">15+ Years Experience <span>&bull;</span> Nationwide Service <span>&bull;</span> Virtual & In-Person <span>&bull;</span> Free Consultation</div>
+
+<section class="hero">
+<div class="hero-bg-img"></div>
+<div class="ctn">
+<div class="hero-grid">
+<div class="hero-content">
+  <div class="hero-label fu-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> Trusted Financial Partner</div>
+  <h1 class="fu-left">Take Control of Your Financial Future</h1>
+  <p class="hero-sub fu-left">Expert tax preparation, credit repair, financial coaching, and bookkeeping — all under one roof. Serving clients nationwide from Los Angeles.</p>
+  <div class="hero-actions fu-left">
+    <button class="btn-p" onclick="navigateTo('contact')">Book Your Free Consultation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    <button class="btn-s" onclick="navigateTo('tax')">Explore Our Services <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+  </div>
+  <div class="hero-stats fu-left">
+    <div class="hero-stat"><div class="hero-stat-num">15+</div><div class="hero-stat-label">Years Experience</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Core Services</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">50</div><div class="hero-stat-label">States Covered</div></div>
+  </div>
+  <div class="fu-left" style="display:inline-flex;align-items:center;gap:10px;padding:10px 20px;background:#fff;border-radius:12px;border:1px solid var(--bdr);box-shadow:var(--shadow);margin-top:24px">
+    <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+    <div><div style="font-weight:700;font-size:.85rem;color:var(--tx)">5.0 Rating</div><div style="font-size:.72rem;color:var(--tx2)">Google Reviews</div></div>
+    <div style="display:flex;gap:2px"><svg width="14" height="14" viewBox="0 0 24 24"><polygon fill="#F0A830" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon fill="#F0A830" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon fill="#F0A830" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon fill="#F0A830" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon fill="#F0A830" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+  </div>
+</div>
+<div class="hero-visual">
+  <div class="hero-img-card hero-img-main fu-right"><img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=1200&q=80" alt="Financial professional at work"></div>
+  <div class="hero-img-float hero-float-1 fu-scale"><div class="hero-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="hero-float-num">750+</div><div class="hero-float-label">Credit Points Restored</div></div>
+  <div class="hero-img-float hero-float-2 fu-scale"><div class="hero-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><rect x="8" y="6" width="8" height="4" rx="1"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/><circle cx="9" cy="18" r="1" fill="currentColor"/><circle cx="15" cy="18" r="1" fill="currentColor"/></svg></div><div class="hero-float-num">98%</div><div class="hero-float-label">Client Satisfaction</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact Info Strip -->
+<section class="info-strip fu" style="background:var(--bg-dark);padding:0">
+<div class="ctn" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">
+  <div style="display:flex;align-items:center;gap:14px;padding:28px 24px;border-right:1px solid rgba(255,255,255,.08)">
+    <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+    <div><div style="font-size:.75rem;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:1px">Call Us</div><a href="tel:+1XXXXXXXXXX" style="color:#fff;font-weight:600;font-size:.95rem">(XXX) XXX-XXXX</a><!-- REPLACE PHONE --></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;padding:28px 24px;border-right:1px solid rgba(255,255,255,.08)">
+    <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+    <div><div style="font-size:.75rem;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:1px">Location</div><div style="color:#fff;font-weight:500;font-size:.92rem">Los Angeles, CA — Nationwide</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;padding:28px 24px">
+    <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+    <div><div style="font-size:.75rem;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:1px">Hours</div><div style="color:#fff;font-weight:500;font-size:.92rem">Mon–Fri 9AM–6PM PT</div></div>
+  </div>
+</div>
+</section>
+
+<!-- Services Preview -->
+<section class="sec">
+<div class="ctn">
+  <div style="text-align:center" class="fu"><span class="sl">What We Do</span><h2 class="st">Comprehensive Financial Solutions</h2><p class="ss" style="margin:0 auto">From tax season to long-term wealth building — we've got every angle covered.</p></div>
+  <div class="svc-grid">
+    <div class="svc-card fu" onclick="navigateTo('tax')"><div class="svc-card-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80')"></div><div class="svc-card-body"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><rect x="8" y="6" width="8" height="4" rx="1"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/><circle cx="9" cy="18" r="1" fill="currentColor"/><circle cx="15" cy="18" r="1" fill="currentColor"/></svg></div><h3>Tax Preparation</h3><p>Accurate, maximized returns for individuals and businesses. Every deduction found, every credit claimed.</p><span class="svc-link">Learn More <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></div>
+    <div class="svc-card fu" onclick="navigateTo('credit')"><div class="svc-card-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80')"></div><div class="svc-card-body"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Credit Repair</h3><p>Dispute errors, remove negatives, and rebuild your credit score with proven strategies.</p><span class="svc-link">Learn More <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></div>
+    <div class="svc-card fu" onclick="navigateTo('coaching')"><div class="svc-card-img" style="background-image:url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80')"></div><div class="svc-card-body"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div><h3>Financial Coaching</h3><p>Personalized guidance on budgeting, saving, investing, and building generational wealth.</p><span class="svc-link">Learn More <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></div>
+    <div class="svc-card fu" onclick="navigateTo('bookkeeping')"><div class="svc-card-img" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80')"></div><div class="svc-card-body"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h6"/></svg></div><h3>Bookkeeping</h3><p>Clean books, organized finances, and tax-ready records for your business — year-round.</p><span class="svc-link">Learn More <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></div>
+  </div>
+</div>
+</section>
+
+<!-- Why Trebor -->
+<section class="sec why-section" style="background:var(--bg-alt)">
+<div class="why-bg" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80')"></div>
+<div class="ctn" style="position:relative;z-index:1">
+  <div style="text-align:center" class="fu"><span class="sl">Why Trebor</span><h2 class="st">Why Clients Choose Trebor</h2></div>
+  <div class="why-grid">
+    <div class="why-card fu"><div class="why-num">01</div><h3>15+ Years of Expertise</h3><p>Over a decade and a half helping individuals and businesses navigate complex financial landscapes with confidence.</p></div>
+    <div class="why-card fu"><div class="why-num">02</div><h3>Nationwide Virtual Service</h3><p>Work with us from anywhere. Video consultations, secure document sharing, and personalized attention — no matter your zip code.</p></div>
+    <div class="why-card fu"><div class="why-num">03</div><h3>One Team, Complete Coverage</h3><p>Tax prep, credit repair, coaching, and bookkeeping — all coordinated under one roof. No referrals, no runaround.</p></div>
+  </div>
+</div>
+</section>
+
+
+<!-- Who We Serve -->
+<section class="sec" style="background:var(--accent-soft)">
+<div class="ctn">
+  <div style="text-align:center" class="fu"><span class="sl">Industries</span><h2 class="st">Who We Serve</h2><p class="ss" style="margin:0 auto">We tailor our approach to your industry and your unique financial situation.</p></div>
+  <div class="ind-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px">
+    <div class="ind-card fu" style="background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--bdr);transition:all .35s"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" style="margin-bottom:12px"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><h4 style="font-size:.92rem;margin-bottom:4px">Real Estate</h4><p style="font-size:.78rem;color:var(--tx2)">Investors, agents & managers</p></div>
+    <div class="ind-card fu" style="background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--bdr);transition:all .35s"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" style="margin-bottom:12px"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><h4 style="font-size:.92rem;margin-bottom:4px">Small Business</h4><p style="font-size:.78rem;color:var(--tx2)">LLCs, S-Corps & sole props</p></div>
+    <div class="ind-card fu" style="background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--bdr);transition:all .35s"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" style="margin-bottom:12px"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><h4 style="font-size:.92rem;margin-bottom:4px">Freelancers</h4><p style="font-size:.78rem;color:var(--tx2)">1099 & gig economy</p></div>
+    <div class="ind-card fu" style="background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--bdr);transition:all .35s"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" style="margin-bottom:12px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><h4 style="font-size:.92rem;margin-bottom:4px">Families</h4><p style="font-size:.78rem;color:var(--tx2)">Joint filers & estates</p></div>
+    <div class="ind-card fu" style="background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--bdr);transition:all .35s"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" style="margin-bottom:12px"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><h4 style="font-size:.92rem;margin-bottom:4px">Healthcare</h4><p style="font-size:.78rem;color:var(--tx2)">Medical professionals</p></div>
+    <div class="ind-card fu" style="background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--bdr);transition:all .35s"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" style="margin-bottom:12px"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg><h4 style="font-size:.92rem;margin-bottom:4px">Education</h4><p style="font-size:.78rem;color:var(--tx2)">Teachers & institutions</p></div>
+    <div class="ind-card fu" style="background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--bdr);transition:all .35s"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" style="margin-bottom:12px"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><h4 style="font-size:.92rem;margin-bottom:4px">E-commerce</h4><p style="font-size:.78rem;color:var(--tx2)">Online sellers</p></div>
+    <div class="ind-card fu" style="background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--bdr);transition:all .35s"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" style="margin-bottom:12px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><h4 style="font-size:.92rem;margin-bottom:4px">Entertainment</h4><p style="font-size:.78rem;color:var(--tx2)">Creators & influencers</p></div>
+  </div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section class="sec test-section" style="padding:100px 0">
+<div class="test-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80')"></div>
+<div class="test-overlay"></div>
+<div class="ctn">
+  <div style="text-align:center" class="fu"><span class="sl" style="color:var(--accent)">Testimonials</span><h2 class="st" style="color:#fff">What Our Clients Say</h2></div>
+  <!-- REPLACE WITH REAL TESTIMONIALS -->
+  <div class="test-grid">
+    <div class="test-card fu"><div class="test-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="test-text">"Robert helped me get my taxes done quickly and found deductions I never knew about. Got back way more than I expected."</p><div class="test-author"><div class="test-avatar">M</div><div><div class="test-name">Marcus T.</div><div class="test-svc">Tax Preparation</div></div></div></div>
+    <div class="test-card fu"><div class="test-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="test-text">"My credit score went up 85 points in 3 months. Trebor disputed items I didn't even know were there. Life-changing."</p><div class="test-author"><div class="test-avatar">S</div><div><div class="test-name">Shanice W.</div><div class="test-svc">Credit Repair</div></div></div></div>
+    <div class="test-card fu"><div class="test-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="test-text">"The financial coaching gave me a real plan. For the first time I actually feel in control of my money and my future."</p><div class="test-author"><div class="test-avatar">D</div><div><div class="test-name">David R.</div><div class="test-svc">Financial Coaching</div></div></div></div>
+  </div>
+</div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" style="text-align:left">
+<div class="ctn" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+  <div class="fu">
+    <h2 style="text-align:left">Ready to Get Your Finances on Track?</h2>
+    <p style="text-align:left">Schedule your complimentary discovery call with Robert — no obligation, no pressure. Or fill out the quick form and we'll reach out within 24 hours.</p>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:24px">
+      <a href="tel:+1XXXXXXXXXX" class="btn-w"><!-- REPLACE PHONE --><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> Call Now</a>
+      <span style="font-size:.85rem;opacity:.5">or fill out the form &rarr;</span>
+    </div>
+  </div>
+  <div class="fu" style="background:rgba(255,255,255,.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:32px">
+    <h3 style="font-size:1.1rem;color:#fff;margin-bottom:20px;font-family:var(--fb);font-weight:600">Quick Consultation Request</h3>
+    <div id="heroLeadForm">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+        <input type="text" id="hfName" placeholder="Full Name" style="padding:11px 14px;border:1.5px solid rgba(255,255,255,.15);border-radius:10px;font-size:.88rem;font-family:var(--fb);background:rgba(255,255,255,.06);color:#fff;width:100%">
+        <input type="tel" id="hfPhone" placeholder="Phone Number" style="padding:11px 14px;border:1.5px solid rgba(255,255,255,.15);border-radius:10px;font-size:.88rem;font-family:var(--fb);background:rgba(255,255,255,.06);color:#fff;width:100%">
+      </div>
+      <input type="email" id="hfEmail" placeholder="Email Address" style="padding:11px 14px;border:1.5px solid rgba(255,255,255,.15);border-radius:10px;font-size:.88rem;font-family:var(--fb);background:rgba(255,255,255,.06);color:#fff;width:100%;margin-bottom:12px">
+      <select id="hfService" style="padding:11px 14px;border:1.5px solid rgba(255,255,255,.15);border-radius:10px;font-size:.88rem;font-family:var(--fb);background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);width:100%;margin-bottom:16px"><option value="">Select a Service...</option><option value="Tax Preparation">Tax Preparation</option><option value="Credit Repair">Credit Repair</option><option value="Financial Coaching">Financial Coaching</option><option value="Bookkeeping">Bookkeeping</option><option value="Not Sure">Not Sure Yet</option></select>
+      <button class="btn-w" id="heroFormBtn" onclick="submitHeroForm()" style="width:100%;justify-content:center;font-size:.92rem">Request My Free Consultation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+    <div id="heroFormSuccess" style="display:none;text-align:center;padding:20px 0">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5" style="margin-bottom:12px"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+      <p style="color:#fff;font-weight:600;margin-bottom:4px">Thank You!</p>
+      <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin-bottom:16px">Robert will be in touch within 24 hours.</p>
+      <button onclick="resetHeroForm()" style="color:var(--accent);font-size:.85rem;font-weight:600;text-decoration:underline;background:none;border:none;cursor:pointer">Submit Another Request</button>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
+<!-- ═══════════ PAGE: TAX PREPARATION ═══════════ -->
+<div class="page" id="page-tax">
+<div class="page-hero"><div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80')"></div><div class="ctn"><span class="sl">Tax Preparation</span><h1 class="st">Maximum Refunds. Minimum Stress.</h1><p class="ss">Whether you're filing as an individual, freelancer, or business owner — we make tax season painless and profitable.</p></div></div>
+<section class="sec"><div class="ctn"><div style="text-align:center" class="fu"><span class="sl">Services</span><h2 class="st">What We Cover</h2></div>
+<div class="ig-grid">
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><rect x="8" y="6" width="8" height="4" rx="1"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/><circle cx="9" cy="18" r="1" fill="currentColor"/><circle cx="15" cy="18" r="1" fill="currentColor"/></svg></div><div><h4>Individual Tax Returns</h4><p>W-2, 1099, multi-state — we handle simple and complex individual filings with precision.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div><div><h4>Self-Employed & Freelancer Returns</h4><p>Maximize deductions for independent contractors, gig workers, and side hustlers.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h6"/></svg></div><div><h4>Small Business Tax Filing</h4><p>LLC, S-Corp, Partnership — accurate business returns that keep you compliant and optimized.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><h4>Back Taxes & Amended Returns</h4><p>Behind on filings? We get you caught up and resolve issues with the IRS.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h4>IRS Audit Support</h4><p>If the IRS comes knocking, we represent and advocate on your behalf.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div><h4>Tax Planning & Projection</h4><p>Proactive strategies to minimize your tax burden before year-end.</p></div></div>
+</div></div></section>
+<section class="sec sec-alt"><div class="ctn"><div style="text-align:center" class="fu"><span class="sl">Process</span><h2 class="st">How It Works</h2></div>
+<div class="steps">
+  <div class="step fu"><h4>Upload Your Documents</h4><p>Securely share your tax docs through our encrypted portal — simple and safe.</p></div>
+  <div class="step-arrow fu">&rarr;</div>
+  <div class="step fu"><h4>We Prepare & Review</h4><p>Our team prepares your return and walks you through every line before filing.</p></div>
+  <div class="step-arrow fu">&rarr;</div>
+  <div class="step fu"><h4>File & Maximize</h4><p>We file electronically and ensure you receive the maximum legal refund.</p></div>
+</div></div></section>
+<section class="cta-banner"><div class="ctn fu"><h2>Ready to File With Confidence?</h2><p>Let us handle your taxes so you can focus on what matters.</p><button class="btn-w" onclick="navigateTo('contact')">Book Your Free Tax Consultation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></section>
+</div>
+
+<!-- ═══════════ PAGE: CREDIT REPAIR ═══════════ -->
+<div class="page" id="page-credit">
+<div class="page-hero"><div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80')"></div><div class="ctn"><span class="sl">Credit Repair</span><h1 class="st">Your Credit Score Doesn't Define You. Let's Fix It.</h1><p class="ss">Errors, outdated accounts, and unfair reporting drag your score down. We fight to get them removed — legally and effectively.</p></div></div>
+<section class="sec"><div class="ctn"><div style="text-align:center" class="fu"><span class="sl">Common Issues</span><h2 class="st">What We Fix</h2></div>
+<div class="ig-grid">
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h4>Late Payment Errors</h4><p>Incorrectly reported late payments that unfairly damage your score.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h4>Collections & Charge-Offs</h4><p>Accounts sent to collections or charged off — often disputable and removable.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h4>Identity Theft & Fraud</h4><p>Fraudulent accounts opened in your name that you never authorized.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h4>Incorrect Balances</h4><p>Wrong account balances that inflate your utilization ratio.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h4>Duplicate Accounts</h4><p>The same debt reported multiple times, compounding the damage.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h4>Outdated Negative Marks</h4><p>Items that should have fallen off your report but haven't.</p></div></div>
+</div></div></section>
+<section class="sec sec-alt"><div class="ctn"><div class="fu"><span class="sl">Process</span><h2 class="st">Our Credit Repair Process</h2></div>
+<div class="timeline">
+  <div class="tl-item fu"><div class="tl-dot"></div><h4>Free Credit Analysis</h4><p>We pull your reports from all 3 bureaus and identify every disputable item affecting your score.</p></div>
+  <div class="tl-item fu"><div class="tl-dot"></div><h4>Custom Dispute Strategy</h4><p>Tailored letters and legal challenges sent to bureaus and creditors on your behalf.</p></div>
+  <div class="tl-item fu"><div class="tl-dot"></div><h4>Monitor & Escalate</h4><p>We track responses, re-dispute as needed, and keep you updated every step of the way.</p></div>
+  <div class="tl-item fu"><div class="tl-dot"></div><h4>Score Improvement</h4><p>Watch your score climb as negative items are removed and your credit profile strengthens.</p></div>
+</div></div></section>
+<section class="cta-banner"><div class="ctn fu"><h2>Take the First Step Toward Better Credit</h2><p>Your free credit analysis is just one call away.</p><button class="btn-w" onclick="navigateTo('contact')">Book Your Free Credit Analysis <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></section>
+</div>
+
+<!-- ═══════════ PAGE: FINANCIAL COACHING ═══════════ -->
+<div class="page" id="page-coaching">
+<div class="page-hero"><div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80')"></div><div class="ctn"><span class="sl">Financial Coaching</span><h1 class="st">Stop Surviving. Start Building.</h1><p class="ss">Personalized 1-on-1 coaching to help you budget smarter, eliminate debt, build savings, and create generational wealth.</p></div></div>
+<section class="sec"><div class="ctn"><div style="text-align:center" class="fu"><span class="sl">Coverage</span><h2 class="st">What Coaching Covers</h2></div>
+<div class="ig-grid">
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div><div><h4>Budgeting & Cash Flow</h4><p>Understand exactly where your money goes and create a plan that works for your life.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div><h4>Debt Elimination</h4><p>Strategic approaches to pay off debt faster — snowball, avalanche, and hybrid methods.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h4>Savings & Emergency Fund</h4><p>Build a financial safety net and develop healthy saving habits that stick.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div><div><h4>Investment Education</h4><p>Learn the basics of investing — stocks, retirement accounts, and building portfolio confidence.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><h4>Retirement Planning</h4><p>It's never too early or too late. Map out your path to a secure retirement.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg></div><div><h4>Generational Wealth</h4><p>Build wealth that lasts beyond your lifetime — for your family and your legacy.</p></div></div>
+</div></div></section>
+<section class="sec sec-alt"><div class="ctn"><div class="fu"><span class="sl">Is This For You?</span><h2 class="st">Who Coaching Is For</h2></div>
+<div class="wif-list">
+  <div class="wif-item fu"><div class="wif-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div><p>Individuals living paycheck to paycheck who want a real plan to break the cycle.</p></div>
+  <div class="wif-item fu"><div class="wif-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div><p>Families preparing for major milestones — buying a home, funding college, or planning retirement.</p></div>
+  <div class="wif-item fu"><div class="wif-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div><p>Entrepreneurs who earn well but don't know where all the money goes.</p></div>
+  <div class="wif-item fu"><div class="wif-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div><p>Anyone who wants a clear, actionable financial roadmap and an accountability partner.</p></div>
+</div></div></section>
+<section class="sec"><div class="ctn"><div style="text-align:center" class="fu"><span class="sl">Process</span><h2 class="st">How It Works</h2></div>
+<div class="steps">
+  <div class="step fu"><h4>Discovery Call</h4><p>We assess your current financial picture — income, expenses, debts, and goals.</p></div>
+  <div class="step-arrow fu">&rarr;</div>
+  <div class="step fu"><h4>Custom Financial Plan</h4><p>You receive a personalized roadmap with clear milestones and action steps.</p></div>
+  <div class="step-arrow fu">&rarr;</div>
+  <div class="step fu"><h4>Ongoing Accountability</h4><p>Regular check-ins to track progress, adjust strategies, and celebrate wins.</p></div>
+</div></div></section>
+<section class="cta-banner"><div class="ctn fu"><h2>Your Financial Transformation Starts With One Call</h2><p>Take the first step toward financial freedom today.</p><button class="btn-w" onclick="navigateTo('contact')">Book Your Free Coaching Consultation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></section>
+</div>
+
+<!-- ═══════════ PAGE: BOOKKEEPING ═══════════ -->
+<div class="page" id="page-bookkeeping">
+<div class="page-hero"><div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80')"></div><div class="ctn"><span class="sl">Business & Financial Bookkeeping</span><h1 class="st">Clean Books. Clear Picture. Complete Confidence.</h1><p class="ss">Accurate, organized bookkeeping so you can focus on running your business — not chasing receipts.</p></div></div>
+<section class="sec"><div class="ctn"><div style="text-align:center" class="fu"><span class="sl">Services</span><h2 class="st">What We Provide</h2></div>
+<div class="ig-grid">
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h6"/></svg></div><div><h4>Monthly Bookkeeping & Reconciliation</h4><p>Accurate records reconciled every month so your books are always current.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div><div><h4>Accounts Payable & Receivable</h4><p>Track what you owe and what's owed to you — never miss a payment.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><rect x="8" y="6" width="8" height="4" rx="1"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/><circle cx="9" cy="18" r="1" fill="currentColor"/><circle cx="15" cy="18" r="1" fill="currentColor"/></svg></div><div><h4>Payroll Processing Support</h4><p>Keep your team paid accurately and on time with compliant payroll records.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div><h4>Financial Reporting</h4><p>P&L statements, balance sheets, and cash flow reports — clear visibility into your business health.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h4>Tax-Ready Year-End Prep</h4><p>Books organized and ready for tax season — no last-minute scramble.</p></div></div>
+  <div class="ig-card fu"><div class="ig-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div><div><h4>QuickBooks Setup & Training</h4><p>Get set up on QuickBooks or your preferred platform with proper chart of accounts.</p></div></div>
+</div></div></section>
+<section class="sec sec-alt" style="text-align:center"><div class="ctn"><div class="fu"><span class="sl">Impact</span><h2 class="st">Why It Matters</h2><p class="ss" style="margin:0 auto 40px">Messy books cost you money — in tax penalties, missed deductions, and bad decisions based on bad data.</p></div>
+<div class="why-grid">
+  <div class="why-card fu" style="text-align:center"><h3>Accuracy Guaranteed</h3><p>Every transaction verified and categorized correctly.</p></div>
+  <div class="why-card fu" style="text-align:center"><h3>Monthly Reports</h3><p>Clear financial reports delivered to your inbox every month.</p></div>
+  <div class="why-card fu" style="text-align:center"><h3>Tax Season Ready</h3><p>When April hits, your books are already done.</p></div>
+</div></div></section>
+<section class="cta-banner"><div class="ctn fu"><h2>Let's Get Your Books in Order</h2><p>Clean books mean better decisions, fewer headaches, and more money in your pocket.</p><button class="btn-w" onclick="navigateTo('contact')">Book Your Free Bookkeeping Consultation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></section>
+</div>
+
+<!-- ═══════════ PAGE: ABOUT ═══════════ -->
+<div class="page" id="page-about">
+<div class="page-hero"><div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80')"></div><div class="ctn"><span class="sl">About</span><h1 class="st">Meet Robert Avege</h1><p class="ss">The founder and financial strategist behind Trebor Financial Solutions.</p></div></div>
+<section class="sec"><div class="ctn">
+<div class="about-grid">
+  <div class="fu-left"><!-- REPLACE WITH ROBERT'S PHOTO --><div class="about-photo"><div class="about-photo-overlay">RA</div></div></div>
+  <div class="about-text fu-right">
+    <h2>Building Financial Futures for Over 15 Years</h2>
+    <p>Robert Avege founded Trebor Financial Solutions with a clear mission: to make expert financial services accessible to everyone — regardless of income level or background.</p>
+    <p>With more than 15 years of hands-on experience in tax preparation, credit repair, financial coaching, and bookkeeping, Robert has helped hundreds of individuals and small business owners take control of their money and build toward lasting prosperity.</p>
+    <p>Based in Los Angeles and serving clients in all 50 states through secure virtual consultations, Robert believes that financial empowerment isn't a luxury — it's a right.</p>
+    <p class="about-quote">"I don't just prepare your taxes or fix your credit — I make sure you understand the 'why' behind every step. That's how real change happens."</p>
+  </div>
+</div>
+</div></section>
+<section class="sec sec-alt"><div class="ctn"><div style="text-align:center" class="fu"><span class="sl">Our Values</span><h2 class="st">What We Stand For</h2></div>
+<div class="values-grid">
+  <div class="val-card fu"><div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Integrity First</h4><p>Your finances are personal. We treat them that way — with honesty, discretion, and respect.</p></div>
+  <div class="val-card fu"><div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><h4>Education Over Dependency</h4><p>We don't just do it for you — we teach you why. Knowledge is the foundation of financial freedom.</p></div>
+  <div class="val-card fu"><div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h4>Accessible Excellence</h4><p>Expert-level service shouldn't require a six-figure income. We serve everyone.</p></div>
+</div></div></section>
+<section class="cta-banner"><div class="ctn fu"><h2>Ready to Work With Robert?</h2><p>Your journey to financial clarity starts with a conversation.</p><button class="btn-w" onclick="navigateTo('contact')">Book Your Free Consultation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></section>
+</div>
+
+<!-- ═══════════ PAGE: CONTACT ═══════════ -->
+<div class="page" id="page-contact">
+<div class="page-hero"><div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80')"></div><div class="ctn"><span class="sl">Contact</span><h1 class="st">Let's Talk About Your Finances</h1><p class="ss">Book a free consultation, ask a question, or get started today.</p></div></div>
+<section class="sec"><div class="ctn">
+<div class="contact-grid">
+  <div class="form-card fu-left">
+    <h3 style="font-size:1.3rem;margin-bottom:24px">Request a Free Consultation</h3>
+    <div id="leadForm">
+      <div class="form-group"><label for="fname">Full Name</label><input type="text" id="fname" placeholder="Your full name" required></div>
+      <div class="form-group"><label for="femail">Email Address</label><input type="email" id="femail" placeholder="you@email.com" required></div>
+      <div class="form-group"><label for="fphone">Phone Number</label><input type="tel" id="fphone" placeholder="(555) 123-4567" required></div>
+      <div class="form-group"><label for="fservice">Service Interested In</label><select id="fservice"><option value="">Select a service...</option><option value="Tax Preparation">Tax Preparation</option><option value="Credit Repair">Credit Repair</option><option value="Financial Coaching">Financial Coaching</option><option value="Bookkeeping">Bookkeeping</option><option value="Not Sure">Not Sure Yet</option></select></div>
+      <div class="form-group"><label for="fmessage">Message (optional)</label><textarea id="fmessage" placeholder="Tell us about your situation..."></textarea></div>
+      <button class="btn-p" id="formSubmitBtn" onclick="submitLeadForm()" style="width:100%;justify-content:center">Request My Free Consultation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+      <h3>Thank You!</h3>
+      <p>Your consultation request has been received. Robert will be in touch within 24 hours.</p>
+      <button class="btn-s" onclick="resetLeadForm()">Submit Another Request</button>
+    </div>
+  </div>
+  <div class="contact-info fu-right">
+    <div class="ci-card"><div class="ci-card-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><h4>Phone</h4><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a><!-- REPLACE WITH REAL PHONE --></div></div>
+    <div class="ci-card"><div class="ci-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></div><div><h4>Email</h4><a href="mailto:hello@treborfinancialsolutions.com">hello@treborfinancialsolutions.com</a></div></div>
+    <div class="ci-card"><div class="ci-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Location</h4><p>Los Angeles, CA<br>Virtual / By Appointment Nationwide</p></div></div>
+    <div class="ci-card"><div class="ci-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><h4>Hours</h4><p>Mon–Fri: 9:00 AM – 6:00 PM PT<br>Saturday: By Appointment</p></div></div>
+  </div>
+</div>
+</div></section>
+
+<section class="sec sec-alt"><div class="ctn"><div style="text-align:center" class="fu"><span class="sl">FAQ</span><h2 class="st">Frequently Asked Questions</h2></div>
+<div class="faq-list">
+  <div class="faq-item fu"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>How much does a consultation cost?</h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><p>Your initial consultation is completely free. We'll discuss your situation and recommend the best path forward — no obligation, no pressure.</p></div></div>
+  <div class="faq-item fu"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Do I need to be in Los Angeles to work with you?</h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><p>Not at all. We serve clients in all 50 states through secure video consultations and encrypted document sharing.</p></div></div>
+  <div class="faq-item fu"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>How long does credit repair take?</h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><p>Most clients see measurable improvement within 60–90 days, though results vary based on your specific credit profile.</p></div></div>
+  <div class="faq-item fu"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>What documents do I need for tax preparation?</h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><p>We'll send you a personalized checklist after booking. Generally: W-2s, 1099s, last year's return, and any deduction documentation.</p></div></div>
+  <div class="faq-item fu"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><h4>Do you work with small businesses?</h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><p>Absolutely. We provide bookkeeping, business tax preparation, and financial coaching tailored to small business owners.</p></div></div>
+</div></div></section>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+<div class="ctn">
+<div class="footer-grid">
+  <div class="footer-brand"><div class="nav-logo" onclick="navigateTo('home')" style="cursor:pointer;margin-bottom:4px"><div class="nav-logo-mark">T</div><div class="nav-logo-text"><span class="nav-logo-name">Trebor</span><span class="nav-logo-sub">Financial Solutions</span></div></div><p>Expert tax preparation, credit repair, financial coaching, and bookkeeping. Serving clients nationwide from Los Angeles.</p></div>
+  <div><h5>Services</h5><ul><li><a onclick="navigateTo('tax')">Tax Preparation</a></li><li><a onclick="navigateTo('credit')">Credit Repair</a></li><li><a onclick="navigateTo('coaching')">Financial Coaching</a></li><li><a onclick="navigateTo('bookkeeping')">Bookkeeping</a></li></ul></div>
+  <div><h5>Company</h5><ul><li><a onclick="navigateTo('about')">About</a></li><li><a onclick="navigateTo('contact')">Contact</a></li></ul></div>
+  <div><h5>Contact</h5><ul><li><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></li><li><a href="mailto:hello@treborfinancialsolutions.com">hello@treborfinancialsolutions.com</a></li><li>Los Angeles, CA</li></ul></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2026 Trebor Financial Solutions. All rights reserved.</span><div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><a href="#" style="transition:color .25s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Privacy Policy</a><span style="opacity:.3">|</span><a href="#" style="transition:color .25s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Terms of Service</a><span style="opacity:.3">|</span><a href="#" style="transition:color .25s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">Disclaimer</a></div><span>Powered by <a href="https://calldirector.agency" target="_blank" style="color:var(--accent)">CallDirector AI</a></span></div>
+<div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.6;text-align:center">Trebor Financial Solutions is a financial services firm offering tax preparation, credit repair, financial coaching, and bookkeeping. We are not a law firm and do not provide legal advice. Results may vary based on individual circumstances. Credit repair services are provided in compliance with applicable federal and state laws. Consult a qualified attorney or licensed professional for legal or investment advice.</div>
+</div>
+</footer>
+
+<div class="mobile-cta"><a href="tel:+1XXXXXXXXXX"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> Book a Free Consultation</a></div>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
+
+<!-- CallDirector AI Voice Launcher -->
+<script src="https://app.paymegpt.com/launcher/PLACEHOLDER-ID.js" async></script>
+<!-- REPLACE PLACEHOLDER-ID with actual PMG launcher script ID -->
+
+
+  <script src="script.js"></script>
+</body>
+</html>
