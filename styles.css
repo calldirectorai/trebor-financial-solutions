@@ -8,7 +8,7 @@
   --shadow:0 4px 24px rgba(27,79,138,.08);--shadow-hover:0 16px 48px rgba(27,79,138,.16);
   --radius:16px;--nav-h:72px;--container:1200px;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:#0A1628}
 body{font-family:var(--fb);color:var(--tx);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 button{border:none;cursor:pointer;font-family:var(--fb);background:none}
