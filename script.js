@@ -193,7 +193,12 @@ function submitHeroForm(){
   const n=document.getElementById('hfName').value.trim(),p=document.getElementById('hfPhone').value.trim(),e=document.getElementById('hfEmail').value.trim(),s=document.getElementById('hfService').value;
   if(!n||!p||!e){alert('Please fill in your name, phone, and email.');return}
   const btn=document.getElementById('heroFormBtn');btn.disabled=true;btn.textContent='Sending...';
-  fetch('https://PLACEHOLDER-WEBHOOK-URL',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contactPhone:p,contactName:n,webhook_name:n,webhook_phone:p,webhook_email:e,webhook_service:s||'Not specified',webhook_message:'Quick form submission',webhook_source:'Trebor Website - Hero Form'})}).then(()=>{document.getElementById('heroLeadForm').style.display='none';document.getElementById('heroFormSuccess').style.display='block';setTimeout(resetHeroForm,15000)}).catch(()=>{document.getElementById('heroLeadForm').style.display='none';document.getElementById('heroFormSuccess').style.display='block';setTimeout(resetHeroForm,15000)});
+  const payload={contactPhone:p,contactName:n,webhook_name:n,webhook_phone:p,webhook_email:e,webhook_service:s||'Not specified',webhook_message:'Quick form submission',webhook_source:'Trebor Website - Hero Form'};
+  console.log('[Trebor Hero Form] Sending payload:',JSON.stringify(payload,null,2));
+  fetch('https://paymegpt.com/api/webhooks/flow/wg7doxi3/80397fb1cfdca4405623512c8858469b404af043da20a1b781cf9a424ab82a53',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+  .then(res=>{console.log('[Trebor Hero Form] Status:',res.status);return res.text().then(t=>{console.log('[Trebor Hero Form] Response:',t);});})
+  .catch(err=>console.error('[Trebor Hero Form] Error:',err))
+  .finally(()=>{document.getElementById('heroLeadForm').style.display='none';document.getElementById('heroFormSuccess').style.display='block';setTimeout(resetHeroForm,15000);});
 }
 function resetHeroForm(){document.getElementById('heroLeadForm').style.display='block';document.getElementById('heroFormSuccess').style.display='none';const b=document.getElementById('heroFormBtn');b.disabled=false;b.innerHTML='Request My Free Consultation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';['hfName','hfPhone','hfEmail'].forEach(id=>document.getElementById(id).value='');document.getElementById('hfService').value=''}
 let resetTimer;
@@ -201,9 +206,33 @@ function submitLeadForm(){
   const n=document.getElementById('fname').value.trim(),e=document.getElementById('femail').value.trim(),p=document.getElementById('fphone').value.trim(),s=document.getElementById('fservice').value,m=document.getElementById('fmessage').value.trim();
   if(!n||!e||!p){alert('Please fill in your name, email, and phone number.');return}
   const btn=document.getElementById('formSubmitBtn');btn.disabled=true;btn.textContent='Sending...';
-  fetch('https://PLACEHOLDER-WEBHOOK-URL',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contactPhone:p,contactName:n,webhook_name:n,webhook_phone:p,webhook_email:e,webhook_service:s||'Not specified',webhook_message:m||'No message',webhook_source:'Trebor Website'})}).then(()=>showSuccess()).catch(()=>showSuccess());
+  const payload={contactPhone:p,contactName:n,webhook_name:n,webhook_phone:p,webhook_email:e,webhook_service:s||'Not specified',webhook_message:m||'No message',webhook_source:'Trebor Website'};
+  console.log('[Trebor Contact Form] Sending payload:',JSON.stringify(payload,null,2));
+  fetch('https://paymegpt.com/api/webhooks/flow/wg7doxi3/80397fb1cfdca4405623512c8858469b404af043da20a1b781cf9a424ab82a53',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+  .then(res=>{console.log('[Trebor Contact Form] Status:',res.status);return res.text().then(t=>{console.log('[Trebor Contact Form] Response:',t);});})
+  .catch(err=>console.error('[Trebor Contact Form] Error:',err))
+  .finally(()=>showSuccess());
 }
 function showSuccess(){document.getElementById('leadForm').style.display='none';document.getElementById('formSuccess').style.display='block';resetTimer=setTimeout(resetLeadForm,15000)}
 function resetLeadForm(){clearTimeout(resetTimer);document.getElementById('leadForm').style.display='block';document.getElementById('formSuccess').style.display='none';const b=document.getElementById('formSubmitBtn');b.disabled=false;b.innerHTML='Request My Free Consultation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';['fname','femail','fphone','fmessage'].forEach(id=>document.getElementById(id).value='');document.getElementById('fservice').value=''}
-function triggerVeraVoice(){const p=document.querySelector('.pmg-launcher-btn,.vera-launcher-btn,[class*="launcher"]');if(p){p.click();return}const vw=window.innerWidth,vh=window.innerHeight;const els=document.elementsFromPoint(vw-75,vh-100);for(const el of els){if(el.tagName==='BUTTON'||el.role==='button'||el.onclick){el.click();return}}}
+function triggerRuthVoice(){
+  // Try PMG widget API first
+  if(window.PMGWidget && typeof window.PMGWidget.open==='function'){window.PMGWidget.open();return;}
+  // Try common PMG selectors
+  const sel=['[id*="pmg"][class*="btn"]','[id*="pmg"][class*="button"]','[class*="pmg-chat"]','[class*="pmg-widget"] button','[data-widget="99904174"] button'];
+  for(const s of sel){const el=document.querySelector(s);if(el&&el!==document.getElementById('ruth-launcher')){el.click();return;}}
+  // Position-based fallback — bottom-right 200x200px zone, skip our own button
+  const vw=window.innerWidth,vh=window.innerHeight;
+  const candidates=document.elementsFromPoint(vw-80,vh-120);
+  for(const el of candidates){
+    if(el===document.getElementById('ruth-launcher')||el.closest('#ruth-launcher'))continue;
+    if(el.tagName==='BUTTON'||el.getAttribute('role')==='button'||el.onclick){el.click();return;}
+  }
+}
+// Hide PMG's own launcher button after it loads async
+const pmgObserver=new MutationObserver(()=>{
+  const pmgBtn=document.querySelector('[id*="pmg-widget-launcher"],[class*="pmg-launcher-btn"],[class*="widget-launcher-btn"]');
+  if(pmgBtn){pmgBtn.style.cssText='display:none!important;opacity:0!important;pointer-events:none!important';pmgObserver.disconnect();}
+});
+pmgObserver.observe(document.body,{childList:true,subtree:true});
 document.addEventListener('DOMContentLoaded',()=>{initReveals();document.getElementById('navbar').classList.add('scrolled')});
