@@ -193,7 +193,7 @@ function submitHeroForm(){
   const n=document.getElementById('hfName').value.trim(),p=document.getElementById('hfPhone').value.trim(),e=document.getElementById('hfEmail').value.trim(),s=document.getElementById('hfService').value;
   if(!n||!p||!e){alert('Please fill in your name, phone, and email.');return}
   const btn=document.getElementById('heroFormBtn');btn.disabled=true;btn.textContent='Sending...';
-  const payload={contactPhone:p,contactName:n,webhook_name:n,webhook_phone:p,webhook_email:e,webhook_service:s||'Not specified',webhook_message:'Quick form submission',webhook_source:'Trebor Website - Hero Form'};
+  const payload={contactPhone:p,contactName:n,contactEmail:e,webhook_name:n,webhook_phone:p,webhook_email:e,webhook_service:s||'Not specified',webhook_message:'Quick form submission',webhook_source:'Trebor Website - Hero Form'};
   console.log('[Trebor Hero Form] Sending payload:',JSON.stringify(payload,null,2));
   fetch('https://paymegpt.com/api/webhooks/flow/wg7doxi3/80397fb1cfdca4405623512c8858469b404af043da20a1b781cf9a424ab82a53',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
   .then(res=>{console.log('[Trebor Hero Form] Status:',res.status);return res.text().then(t=>{console.log('[Trebor Hero Form] Response:',t);});})
@@ -206,7 +206,7 @@ function submitLeadForm(){
   const n=document.getElementById('fname').value.trim(),e=document.getElementById('femail').value.trim(),p=document.getElementById('fphone').value.trim(),s=document.getElementById('fservice').value,m=document.getElementById('fmessage').value.trim();
   if(!n||!e||!p){alert('Please fill in your name, email, and phone number.');return}
   const btn=document.getElementById('formSubmitBtn');btn.disabled=true;btn.textContent='Sending...';
-  const payload={contactPhone:p,contactName:n,webhook_name:n,webhook_phone:p,webhook_email:e,webhook_service:s||'Not specified',webhook_message:m||'No message',webhook_source:'Trebor Website'};
+  const payload={contactPhone:p,contactName:n,contactEmail:e,webhook_name:n,webhook_phone:p,webhook_email:e,webhook_service:s||'Not specified',webhook_message:m||'No message',webhook_source:'Trebor Website'};
   console.log('[Trebor Contact Form] Sending payload:',JSON.stringify(payload,null,2));
   fetch('https://paymegpt.com/api/webhooks/flow/wg7doxi3/80397fb1cfdca4405623512c8858469b404af043da20a1b781cf9a424ab82a53',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
   .then(res=>{console.log('[Trebor Contact Form] Status:',res.status);return res.text().then(t=>{console.log('[Trebor Contact Form] Response:',t);});})
@@ -229,10 +229,25 @@ function triggerRuthVoice(){
     if(el.tagName==='BUTTON'||el.getAttribute('role')==='button'||el.onclick){el.click();return;}
   }
 }
-// Hide PMG's own launcher button after it loads async
-const pmgObserver=new MutationObserver(()=>{
-  const pmgBtn=document.querySelector('[id*="pmg-widget-launcher"],[class*="pmg-launcher-btn"],[class*="widget-launcher-btn"]');
-  if(pmgBtn){pmgBtn.style.cssText='display:none!important;opacity:0!important;pointer-events:none!important';pmgObserver.disconnect();}
-});
-pmgObserver.observe(document.body,{childList:true,subtree:true});
+// Aggressively suppress PMG's own launcher buttons after async load
+function suppressPMGButtons(){
+  const selectors=[
+    '[id^="pmg-widget-launcher"]','[id^="pmg-launcher"]',
+    '[class*="pmg-launcher"]','[class*="pmg-widget-btn"]',
+    '[class*="widget-launcher"]','[class*="launcher-button"]'
+  ];
+  selectors.forEach(s=>{
+    document.querySelectorAll(s).forEach(el=>{
+      if(!el.closest('#ruth-launcher')){
+        el.style.cssText='display:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important';
+      }
+    });
+  });
+}
+// Run on DOM mutations
+const pmgObserver=new MutationObserver(suppressPMGButtons);
+pmgObserver.observe(document.body,{childList:true,subtree:true,attributes:true});
+// Also run on interval for first 10s to catch delayed injections
+let pmgSuppressCount=0;
+const pmgInterval=setInterval(()=>{suppressPMGButtons();if(++pmgSuppressCount>=20)clearInterval(pmgInterval);},500);
 document.addEventListener('DOMContentLoaded',()=>{initReveals();document.getElementById('navbar').classList.add('scrolled')});
