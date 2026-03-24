@@ -287,9 +287,9 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:400;line-height:1.15}
 /* MOBILE STICKY CTA */
 .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;padding:12px 16px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));box-shadow:0 -4px 24px rgba(0,0,0,.2)}
 .mobile-cta a{display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-weight:600;font-size:.95rem;width:100%;padding:4px 0}
-.scroll-top{position:fixed;bottom:80px;right:20px;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:all .4s;box-shadow:0 4px 20px rgba(27,79,138,.3)}
+.scroll-top{position:fixed;bottom:80px;left:20px;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--primary);border:1.5px solid var(--bdr);display:flex;align-items:center;justify-content:center;z-index:998;opacity:0;pointer-events:none;transition:all .4s;box-shadow:0 4px 16px rgba(0,0,0,.1)}
 .scroll-top.show{opacity:1;pointer-events:all}
-.scroll-top:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(27,79,138,.4)}
+.scroll-top:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(27,79,138,.2);border-color:var(--primary)}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -327,20 +327,25 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:400;line-height:1.15}
   .form-card{padding:24px}
 }
 
-/* Suppress PMG's own launcher button */
+/* Suppress PMG's own launcher button — all known selectors */
 [id^="pmg-widget-launcher"],
+[id^="pmg-launcher"],
 [class*="pmg-launcher"],
+[class*="pmg-widget-btn"],
 [class*="widget-launcher"],
-iframe[src*="paymegpt"] + div,
-div[id^="pmg-"] > button:not(#ruth-launcher *) {
+[class*="launcher-button"],
+div[data-widget="99904174"] > div > button,
+iframe[src*="paymegpt"] ~ div > button,
+iframe[src*="paymegpt"] ~ div {
   display: none !important;
   opacity: 0 !important;
+  visibility: hidden !important;
   pointer-events: none !important;
 }
 
 #ruth-launcher {
   position: fixed;
-  bottom: 92px;
+  bottom: 160px;
   right: 24px;
   z-index: 9999;
   display: flex;
@@ -396,7 +401,7 @@ div[id^="pmg-"] > button:not(#ruth-launcher *) {
 }
 @media (max-width: 768px) {
   #ruth-launcher {
-    bottom: 80px;
+    bottom: 140px;
     right: 16px;
   }
   .ruth-inner { width: 50px; height: 50px; }
