@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+<!-- SEO Meta Tags -->
+<title>Trebor Financial Solutions – Share Your Experience</title>
+<meta property="og:title" content="Trebor Financial Solutions – Share Your Experience" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Trebor Financial Solutions – Share Your Experience" />
+<!-- End SEO Meta Tags -->
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://app.calldirector.ai/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=3325');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='2De2DL';
+  var apiBase='https://app.calldirector.ai';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">Thank you for purchasing '+pName.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'.</p><button onclick="document.getElementById(\'payment-success-overlay\').remove();window.history.replaceState({},\'\',window.location.pathname);" style="padding:12px 32px;font-size:16px;font-weight:600;background:#16a34a;color:white;border:none;border-radius:8px;cursor:pointer;">Continue</button></div>';
+      document.body.appendChild(overlay);
+    }
+  });
+})();
+</script>  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-area">
+    <div class="logo-badge">T</div>
+    <div class="brand-text">
+      <div class="brand-name">Trebor</div>
+      <div class="brand-sub">Financial Solutions</div>
+    </div>
+  </div>
+  <div class="header-tagline">How Was Your <span>Experience?</span></div>
+  <div class="header-sub">Takes 30 seconds &bull; Your feedback shapes our service</div>
+</div>
+
+<div class="card">
+
+  <div class="screen active" id="screen-sentiment">
+    <div class="sentiment-wrap">
+      <div class="sentiment-q">How did we do this tax season?</div>
+      <div class="sentiment-hint">Tap the face that best matches your experience</div>
+      <div class="emoji-row">
+        <button class="emoji-btn" data-val="5" onclick="pickEmoji(this,5)" title="Excellent">😄</button>
+        <button class="emoji-btn" data-val="4" onclick="pickEmoji(this,4)" title="Good">🙂</button>
+        <button class="emoji-btn" data-val="3" onclick="pickEmoji(this,3)" title="Okay">😐</button>
+        <button class="emoji-btn" data-val="2" onclick="pickEmoji(this,2)" title="Not great">😕</button>
+        <button class="emoji-btn" data-val="1" onclick="pickEmoji(this,1)" title="Poor">😞</button>
+      </div>
+      <div class="tap-cta">Tap to continue →</div>
+    </div>
+  </div>
+
+  <div class="screen" id="screen-happy">
+    <div class="happy-wrap">
+      <div class="happy-icon">🌟</div>
+      <div class="stars-preview">⭐⭐⭐⭐⭐</div>
+      <div class="happy-title">Thank You — That Means A Lot</div>
+      <div class="happy-body">
+        We're so glad we could help you this tax season.<br>
+        Would you mind sharing your experience on Google? As a small firm, every review directly helps more families and business owners find us.
+      </div>
+      <a id="google-review-btn" class="btn-google" href="#" target="_blank" rel="noopener">
+        <div class="google-logo"><span class="google-g">G</span></div>
+        Leave Us a Google Review
+      </a>
+      <div class="happy-footer">
+        Opens Google Reviews in a new tab.<br>
+        <span style="color:var(--gray-400);">Prefer to share privately? <span style="text-decoration:underline;cursor:pointer;" onclick="goToFeedback()">Send feedback directly to Robert.</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen" id="screen-feedback">
+    <div class="form-wrap">
+      <button class="back-link" onclick="goBack()">← Back</button>
+      <div class="form-icon">💬</div>
+      <div class="form-title">We Want To Make It Right</div>
+      <div class="form-body">Your feedback goes directly to Robert — not online. Tell us what happened and we'll personally follow up to make it right.</div>
+
+      <div class="field-group">
+        <label>Your Rating <span class="req">*</span></label>
+        <div class="rating-row">
+          <div class="rating-chip" data-v="1" onclick="selectRating(1)"><span>😞</span>Poor</div>
+          <div class="rating-chip" data-v="2" onclick="selectRating(2)"><span>😕</span>Fair</div>
+          <div class="rating-chip" data-v="3" onclick="selectRating(3)"><span>😐</span>Okay</div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>Which service?</label>
+        <div class="service-row">
+          <div class="service-chip" data-service="Tax Preparation" onclick="selectService(this)">Tax Preparation</div>
+          <div class="service-chip" data-service="Credit Repair" onclick="selectService(this)">Credit Repair</div>
+          <div class="service-chip" data-service="Financial Coaching" onclick="selectService(this)">Coaching</div>
+          <div class="service-chip" data-service="Bookkeeping" onclick="selectService(this)">Bookkeeping</div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>What went wrong? <span class="req">*</span></label>
+        <textarea id="f-issue" placeholder="Please describe your experience so we can make it right…"></textarea>
+        <div class="err-msg" id="err-issue">Please describe your experience.</div>
+      </div>
+
+      <div class="field-group">
+        <label>Your Name <span class="req">*</span></label>
+        <input type="text" id="f-name" placeholder="First &amp; Last Name">
+        <div class="err-msg" id="err-name">Name is required.</div>
+      </div>
+
+      <div class="field-group">
+        <label>Phone Number <span class="req">*</span></label>
+        <input type="tel" id="f-phone" placeholder="(747) 555-0100" inputmode="tel">
+        <div class="err-msg" id="err-phone">A valid phone number is required.</div>
+      </div>
+
+      <div class="field-group">
+        <label>Email <span style="color:var(--gray-400);font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+        <input type="email" id="f-email" placeholder="you@email.com" inputmode="email">
+      </div>
+
+      <div class="field-group">
+        <label>Best Way To Reach You</label>
+        <select id="f-contact-pref">
+          <option value="">Select preference…</option>
+          <option value="phone-call">Phone Call</option>
+          <option value="text">Text Message</option>
+          <option value="email">Email</option>
+          <option value="no-response">No response needed</option>
+        </select>
+      </div>
+
+      <button class="btn-submit" id="submit-btn" onclick="submitFeedback()">
+        Send My Feedback To Robert
+        <div class="spinner"></div>
+      </button>
+
+      <p class="privacy-note">🔒 Private &amp; confidential. Goes directly to Robert — never posted publicly.</p>
+    </div>
+  </div>
+
+  <div class="screen" id="screen-thankyou">
+    <div class="ty-wrap">
+      <div class="ty-circle">✅</div>
+      <div class="ty-title">Message Received</div>
+      <div class="ty-body">
+        Thank you for letting us know. Robert will personally follow up with you shortly.<br><br>
+        We truly appreciate your trust and your business.
+      </div>
+      <div class="ty-badge">✦ Trebor Financial Solutions</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-strip">
+  <p>Powered by CallDirector.agency</p>
+</div>
+
+<script>
+const WEBHOOK_URL   = 'https://app.calldirector.ai/api/webhooks/flow/2509/6527087beedbbb97a3552953ed97730257771191cb3e1cd342d4fe72c21229b0';
+const GOOGLE_URL    = 'https://search.google.com/local/writereview?placeid=PLACEHOLDER_UPDATE_ME';
+const HAPPY_THRESH  = 4;
+const SOURCE_TAG    = 'Email-Trebor-PostTaxSeason-2026';
+
+let chosenScore = null;
+let chosenRating = null;
+let chosenService = '';
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function goBack() { show('screen-sentiment'); }
+
+function pickEmoji(btn, val) {
+  chosenScore = val;
+  document.querySelectorAll('.emoji-btn').forEach(b => { b.classList.remove('selected-happy','selected-unhappy'); });
+  if (val >= HAPPY_THRESH) {
+    btn.classList.add('selected-happy');
+    setTimeout(() => {
+      document.getElementById('google-review-btn').href = GOOGLE_URL;
+      show('screen-happy');
+    }, 320);
+  } else {
+    btn.classList.add('selected-unhappy');
+    setTimeout(() => {
+      selectRating(val <= 3 ? val : 3);
+      show('screen-feedback');
+    }, 320);
+  }
+}
+
+function selectRating(v) {
+  chosenRating = v;
+  document.querySelectorAll('.rating-chip').forEach(c => { c.classList.toggle('sel', parseInt(c.dataset.v) === v); });
+}
+
+function selectService(el) {
+  chosenService = el.dataset.service;
+  document.querySelectorAll('.service-chip').forEach(c => { c.classList.toggle('sel', c === el); });
+}
+
+function goToFeedback() {
+  selectRating(chosenScore || 3);
+  show('screen-feedback');
+}
+
+function setErr(fieldId, errId, showErr) {
+  const f = document.getElementById(fieldId);
+  const e = document.getElementById(errId);
+  if (showErr) { f.classList.add('err'); e.classList.add('show'); }
+  else { f.classList.remove('err'); e.classList.remove('show'); }
+}
+
+function validate() {
+  let ok = true;
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.replace(/\D/g,'');
+  const issue = document.getElementById('f-issue').value.trim();
+  setErr('f-name','err-name', !name);
+  setErr('f-phone','err-phone', phone.length < 10);
+  setErr('f-issue','err-issue', !issue);
+  if (!name || phone.length < 10 || !issue) ok = false;
+  return ok;
+}
+
+async function submitFeedback() {
+  if (!validate()) return;
+  const btn = document.getElementById('submit-btn');
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const payload = {
+    contactName:  document.getElementById('f-name').value.trim(),
+    contactPhone: document.getElementById('f-phone').value.trim(),
+    contactEmail: document.getElementById('f-email').value.trim(),
+    data: {
+      webhook_name:         document.getElementById('f-name').value.trim(),
+      webhook_phone:        document.getElementById('f-phone').value.trim(),
+      webhook_email:        document.getElementById('f-email').value.trim(),
+      webhook_rating:       String(chosenRating || chosenScore || ''),
+      webhook_emoji_score:  String(chosenScore || ''),
+      webhook_service:      chosenService,
+      webhook_issue:        document.getElementById('f-issue').value.trim(),
+      webhook_contact_pref: document.getElementById('f-contact-pref').value,
+      webhook_source:       urlParams.get('utm_source') || SOURCE_TAG,
+      webhook_campaign:     urlParams.get('utm_campaign') || '',
+      webhook_customer_id:  urlParams.get('cid') || '',
+      webhook_timestamp:    new Date().toISOString(),
+    }
+  };
+
+  try {
+    const res = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (res.ok || res.status === 200 || res.status === 202) {
+      show('screen-thankyou');
+    } else {
+      throw new Error('Server error ' + res.status);
+    }
+  } catch (err) {
+    console.warn('Webhook error:', err);
+    show('screen-thankyou');
+  } finally {
+    btn.classList.remove('loading');
+    btn.disabled = false;
+  }
+}
+
+document.getElementById('f-phone').addEventListener('input', function() {
+  let v = this.value.replace(/\D/g,'');
+  if (v.length > 10) v = v.slice(0,10);
+  if (v.length >= 7) this.value = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6);
+  else if (v.length >= 4) this.value = '(' + v.slice(0,3) + ') ' + v.slice(3);
+  else if (v.length >= 1) this.value = v;
+});
+</script>
+</body>
+</html>
